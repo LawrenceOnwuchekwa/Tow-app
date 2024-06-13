@@ -1,11 +1,12 @@
-import { InsertQueryBuilder, JoinColumn, ManyToMany, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { User } from "./User";
-import { Vehicle } from "./vehicle";
-import { TowService } from "./tow_service";
-import { Role } from "./role";
-import { History } from "./history";
-import { TowDriver } from "./tow_driver";
+import { Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { TowService } from "./tow_service.entity";
+import { Role } from "../role";
+import { TowDriver } from "./tow_driver.entity";
+import { User } from "./user.entity";
+import { Vehicle } from "./vehicle.entity";
+import { History } from "./history.entity";
 
+@Entity()
 export class Customer extends User{
 
     //One customer can have multiple tow service

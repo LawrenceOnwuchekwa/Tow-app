@@ -1,8 +1,9 @@
-import { CreateDateColumn, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { User } from "./User";
-import { TowService } from "./tow_service";
-import { Payment } from "./payment";
+import { CreateDateColumn, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Payment } from "./payment.entity";
+import { TowService } from "./tow_service.entity";
+import { User } from "./user.entity";
 
+@Entity()
 export class History{
 
     @PrimaryGeneratedColumn()

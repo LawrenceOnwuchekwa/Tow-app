@@ -1,8 +1,10 @@
-import { Column, CreateDateColumn, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Customer } from "./customer";
-import { PaymentType } from "./paytype";
-import { TowService } from "./tow_service";
+import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { PaymentType } from "../paytype";
+import { TowService } from "./tow_service.entity";
+import { Customer } from "./customer.entity";
+import { History } from "./history.entity"
 
+@Entity()
 export class Payment{
     @PrimaryGeneratedColumn()
     private payment_id:number;
@@ -12,7 +14,7 @@ export class Payment{
     @JoinColumn({name:'tow_service_id'})
     private tow_service:TowService;
 
-    @OneToOne(()=>Customer)
+    @ManyToOne(()=>Customer)
     @JoinColumn({name:'customer_id'})
     private customer:Customer;
 

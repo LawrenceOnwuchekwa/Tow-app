@@ -1,12 +1,13 @@
-import { JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { User } from "./User";
-import { Vehicle } from "./vehicle";
-import { TowService } from "./tow_service";
-import { Role } from "./role";
-import { History } from "./history";
-import { Customer } from "./customer";
+import { Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { TowService } from "./tow_service.entity";
+import { Role } from "../role";
+import { History } from "./history.entity";
+import { Customer } from "./customer.entity";
+import { User } from "./user.entity";
+import { Vehicle } from "./vehicle.entity";
 
-export class TowDriver extends User{
+@Entity()
+export class TowDriver extends User {
 
     @PrimaryGeneratedColumn()
     private tow_driver_id:number;

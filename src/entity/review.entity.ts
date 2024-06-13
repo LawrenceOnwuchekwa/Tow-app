@@ -1,8 +1,8 @@
-import { Timestamp } from "rxjs";
-import { TowService } from "./tow_service";
-import { Customer } from "./customer";
-import { Column, CreateDateColumn, DeleteDateColumn, JoinColumn, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Customer } from "./customer.entity";
+import { TowService } from "./tow_service.entity";
+import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
+@Entity()
 export class Review{
     @PrimaryGeneratedColumn()
     private review_id:number;

@@ -27,6 +27,9 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@mapbox/mapbox-gl-geocoder": "^5.0.2",
+    "@mapbox/mapbox-sdk": "^0.16.0",
+    "@mapbox/search-js-web": "^1.0.0-beta.21",
     "@nestjs-mod/flyway": "^1.5.1",
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^3.2.2",
@@ -34,6 +37,7 @@
     "@nestjs/platform-express": "^10.0.0",
     "@nestjs/typeorm": "^10.0.2",
     "dotenv": "^16.4.5",
+    "mapbox-gl": "^3.4.0",
     "pg": "^8.12.0",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1",

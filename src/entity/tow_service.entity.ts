@@ -1,11 +1,13 @@
-import { Column, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Status } from "./status";
-import { Customer } from "./customer";
-import { TowDriver } from "./tow_driver";
-import { Location } from "./location";
-import { Payment } from "./payment";
-import { Review } from "./review";
+import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Status } from "../status";
+import { TowDriver } from "./tow_driver.entity";
+import { Location } from "./location.entity";
+import { Payment } from "./payment.entity";
+import { Review } from "./review.entity";
+import { Customer } from "./customer.entity";
+import { History } from "./history.entity"
 
+@Entity()
 export class TowService{
 
     @PrimaryGeneratedColumn()
@@ -24,7 +26,7 @@ export class TowService{
     private current_location:Location;
 
     @ManyToOne(()=>Location)
-    @JoinColumn({name:'current_location'})
+    @JoinColumn({name:'destination_location'})
     private destination:Location
 
     @OneToOne(()=>Payment,payment => payment.$tow_service, {cascade:['insert']})

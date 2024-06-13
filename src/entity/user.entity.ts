@@ -1,8 +1,9 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { Role } from "./role";
-import { History } from "./history";
-import { TowDriver } from "./tow_driver";
-import { Customer } from "./customer";
+import { Role } from "../role";
+import { TowDriver } from "./tow_driver.entity";
+import { History } from "./history.entity";
+import { Customer } from "./customer.entity";
+
 
 
 @Entity()

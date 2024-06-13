@@ -1,7 +1,8 @@
-import { Column, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { TowDriver } from "./tow_driver";
-import { Customer } from "./customer";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Customer } from "./customer.entity";
+import { TowDriver } from "./tow_driver.entity";
 
+@Entity()
 export class Vehicle{
 
     @PrimaryGeneratedColumn()
